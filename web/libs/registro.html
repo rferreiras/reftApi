@@ -1,0 +1,174 @@
+<form id="RegistroUsuarios" ng-controller="reguser">
+    <h2><i class="icon-user-add" style="float: left"></i>Formulario de registro de nuevos usuarios</h2>
+    <div class="row">
+        <div class="small-10 large-10 columns">
+            Email :
+        </div>
+        <div class="small-10 large-10 columns">
+          <input type="text" name="New_email" ng-model="email" showhelp="false" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-10 large-10 columns">
+            Clave :
+        </div>
+        <div class="small-10 large-10 columns">
+            <input type="text" name="New_Clave" ng-model="password" showhelp="false" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-10 large-10 columns">
+            Repite Clave :
+        </div>
+        <div class="small-10 large-10 columns">
+            <input type="text" name="New_Clave2" ng-model="password2" showhelp="false" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-10 large-10 columns">
+            Nombres :
+        </div>
+        <div class="small-10 large-10 columns">
+            <input type="text" name="New_nombres" autocomp="nombres"  ng-model="nombres" showhelp="true" id="pp1" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-10 large-10 columns">
+            Apellidos :
+        </div>
+        <div class="small-10 large-10 columns">
+            <input type="text" name="New_apellidos" autocomp="apellidos" showhelp="true" ng-model="apellidos" id="pp2" />
+        </div>
+    </div>
+    <div id="autocompleteBox"></div>
+    <div class="button BtRegistrarOk"><i class="icon-ok"></i>Registrar</div>
+    <div class="button BtRegistrarCancelar"><i class="icon-cancel"></i>Cancelar</div>
+</form>
+<script>
+    $("#autocompleteBox").hide();
+    //Boton de Registro
+    $(".loginBox .BtRegistro").click(function(e) {
+        $(".loginBox .InputPanel,.loginBox .OutputPanel").hide();
+                $(".loginBox").addClass("loged");
+                $(".loginBox .RegistroUsuarios").show("fast");
+        $(".loginBox .RegistroUsuarios").css("position", "absolute");
+        //cuando se escribe
+        $("input[autocomp!='']").click(function() {
+            $("#autocompleteBox").hide();
+        });
+        //lista de autocomplete
+        var listaInput = $("#RegistroUsuarios input[autocomp!='']");
+        for (var i = 0; i < listaInput.length - 1; i++) {
+            $(listaInput[i]).attr("nextInput", $(listaInput[i + 1]).attr("id"));
+        }
+        $("input[autocomp!='']").keyup(function(e) {
+            lib.Os.AutoCompleteTarget = $(this);
+            //console.log("key=" + e.which);
+            switch (e.which) {
+                case 13:
+                    //alert("22");
+                    if (lib.Os.AutoCompleteTarget.attr("showhelp") == "true" && $("#selectable li").length > 0) {
+                        lib.Os.AutoCompleteTarget.val($("#selectable li.selected").html());
+                        $("#autocompleteBox").hide();
+                    } else {
+                        //alert("222");
+                        //this.nex
+                        $("#" + $(this).attr("nextInput")).focus();
+                    }
+                    //if(lib.Os.AutoCompleteTarget.attr("showhelp") == "false" && $("#selectable li").length > 0)
+                    break;
+                case 27:
+                    lib.Os.AutoCompleteTarget.attr("showhelp", "false");
+                    $("#autocompleteBox").hide();
+                    break;
+                case 40:
+                    var p = Number($("#selectable li.selected").attr("index"));
+                    if (p >= 0)
+                    {
+                    }
+                    else {
+                        p = -1;
+                    }
+                    $("#selectable li").removeClass("selected");
+                    $("#selectable li[index='" + (p + 1) + "']").addClass("selected");
+
+                    break;
+                case 38:
+                    var p = Number($("#selectable li.selected").attr("index"));
+                    if (p >= 0)
+                    {
+                    }
+                    else {
+                        p = $("#selectable li").length;
+                    }
+                    $("#selectable li").removeClass("selected");
+                    $("#selectable li[index='" + (p - 1) + "']").addClass("selected");
+                    break;
+                case 40, 38, 37, 39:
+                    break;
+                default:
+                    if ($(this).val().length > 1 && lib.Os.AutoCompleteTarget.attr("showhelp") != "false") {
+                        $("#autocompleteBox").positionOn($(lib.Os.AutoCompleteTarget).parent());
+                        //console.log($(lib.Os.AutoCompleteTarget).attr("autocomp"));
+                        $.ajax({
+                            url: lib.Os.Host + "buscar/" + $(lib.Os.AutoCompleteTarget).attr("autocomp") + "/" + $(lib.Os.AutoCompleteTarget).val() + "?" + Math.random() + "?roman:-azs543",
+                            dataType: "text",
+                        }).done(function(data) {
+                            //alert(data);
+                            console.log(data);
+                            var resultado = eval("(" + data + ")");
+                            if (resultado.data != null && resultado.data.length > 0) {
+                                //Desplegar Resultado
+                                $("#autocompleteBox").show();
+                                var rt = "<ol id='selectable'>";
+                                for (var i = 0; i < resultado.data.length; i++) {
+                                    rt += "<li index='" + i + "'>" + resultado.data[i].data + "</li>";
+                                }
+                                rt += "</ol>";
+                                $("#autocompleteBox").html(rt);
+                                //lib.Os.AutoCompleteStart();
+                                $("#selectable li").click(function(e) {
+                                    lib.Os.AutoCompleteTarget.val($(this).html());
+                                    $("#autocompleteBox").hide();
+                                    console.log(this);
+                                });
+                                $("#selectable li").first().addClass("selected");
+                                /*$("#selectable").selectable({
+                                 selected: function (event, ui) {
+                                 lib.Os.AutoCompleteTarget.val($(ui.selected).html());
+                                 $("#autocompleteBox").hide();
+                                 }
+                                 });*/
+                            } else if (resultado.error != null) {
+                                //usuario no encontrado o clave erronea
+                                alert(resultado.error.msg);
+                            }
+                            else {
+                                lib.Os.AutoCompleteTarget.attr("showhelp", "false");
+                                $("#autocompleteBox").hide();
+                            }
+                        }).fail(function() {
+                            alert("App Abotrada");
+                        });
+                    }
+                    else {
+                        $("#autocompleteBox").hide();
+                    }
+            }
+            if (e.ctrlKey == true && e.which == 32) {
+                lib.Os.AutoCompleteTarget.attr("showhelp", "true");
+            }
+
+        });
+    });
+    $(".BtRegistrarOk").click(function(e) {
+
+    });
+    
+    $(".BtRegistrarCancelar").click(function(e) {
+        $(".RegistroUsuarios").hide();
+        $(".loginBox").removeClass("loged");
+        $(".loginBox .InputPanel,.loginBox ").fadeIn("fast");
+        //$(".loginBox .Opciones").toggle();
+    });
+</script>

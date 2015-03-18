@@ -1,0 +1,16 @@
+{
+    "person": {
+        "id": {
+            "type": "int"
+        },
+        "nombre": {
+            "type": "varchar"
+        },
+        "direccion": {
+            "type": "text"
+        },
+        "telefono": {
+            "type": "varchar"
+        }
+    }
+}

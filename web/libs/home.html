@@ -1,0 +1,16 @@
+<i class="icon-home icono"></i>
+<h1>Inicio </h1>
+<div>
+  <span style="float: left;">Hola &nbsp;</span> 
+  <div>{{dataUser.email}} {{dataUser.nombres}} {{dataUser.apellidos}}</div>
+</div>
+
+<separador/>
+<div class="homeProfile" style="clear: both;" ng-include="'libs/perfil_basic.html'">
+</div>
+<separador/>
+<div class="homeMenu" style="clear: both;">
+  <div class="homeMenuPacientesBt"><i class="icono icon-book"></i> Libro de Pacientes</div>
+  <div class="homeMenuCitasBt"><i class="icono icon-calendar"></i> Libro de Citas</div>
+  <div class="homeMenureportesBt"><i class="icono icon-chart-bar"></i> Estadisticas</div>
+</div>

@@ -1,0 +1,147 @@
+<div class="ScrKeyboard" style="display: none;">
+    <div class="linea-keyboard">
+        <textarea rows="3" class="OutputKeyboar"></textarea>
+        <div class="key iconSqr" valn="Ok / Enter" vals="" style="width: 8em"></div>
+    </div>
+    <div class="linea-keyboard">
+        <div class="key iconSqr" valn="1" vals="!"></div>
+        <div class="key iconSqr" valn="2" vals="@"></div>
+        <div class="key iconSqr" valn="3" vals="#"></div>
+        <div class="key iconSqr" valn="4" vals="$"></div>
+        <div class="key iconSqr" valn="5" vals="%"></div>
+        <div class="key iconSqr" valn="6" vals="^"></div>
+        <div class="key iconSqr" valn="7" vals="&"></div>
+        <div class="key iconSqr" valn="8" vals="*"></div>
+        <div class="key iconSqr" valn="9" vals="("></div>
+        <div class="key iconSqr" valn="0" vals=")"></div>
+        <div class="key iconSqr" valn="-" vals="_"></div>
+        <div class="key iconSqr" valn="=" vals="+"></div>
+        <div class="key iconSqr " valn="`" vals="~"></div>
+        <div class="key iconSqr" valn="Bsk" vals="Bsk"></div>
+    </div>
+    <div class="linea-keyboard">
+        <div class="key iconSqr " valn="q" vals="Q"></div>
+        <div class="key iconSqr" valn="w" vals="W"></div>
+        <div class="key iconSqr" valn="e" vals="E"></div>
+        <div class="key iconSqr" valn="r" vals="R"></div>
+        <div class="key iconSqr" valn="t" vals="T"></div>
+        <div class="key iconSqr" valn="y" vals="Y"></div>
+        <div class="key iconSqr" valn="u" vals="U"></div>
+        <div class="key iconSqr" valn="i" vals="I"></div>
+        <div class="key iconSqr" valn="o" vals="O"></div>
+        <div class="key iconSqr" valn="p" vals="P"></div>
+        <div class="key iconSqr" valn="[" vals="{"></div>
+        <div class="key iconSqr" valn="]" vals="}"></div>
+        <div class="key iconSqr" valn="\" vals="|"></div>
+    </div>
+    <div class="linea-keyboard">
+        <div class="key iconSqr" valn="a" vals="A"></div>
+        <div class="key iconSqr" valn="s" vals="S"></div>
+        <div class="key iconSqr" valn="d" vals="D"></div>
+        <div class="key iconSqr" valn="f" vals="F"></div>
+        <div class="key iconSqr" valn="g" vals="G"></div>
+        <div class="key iconSqr" valn="h" vals="H"></div>
+        <div class="key iconSqr" valn="j" vals="J"></div>
+        <div class="key iconSqr" valn="k" vals="K"></div>
+        <div class="key iconSqr" valn="l" vals="L"></div>
+        <div class="key iconSqr" valn=";" vals=":"></div>
+        <div class="key iconSqr" valn="'" vals="''"></div>
+    </div>
+    <div class="linea-keyboard">
+        <div class="key iconSqr" valn="Shift" vals=""></div>
+        <div class="key iconSqr" valn="z" vals="Z"></div>
+        <div class="key iconSqr" valn="x" vals="X"></div>
+        <div class="key iconSqr" valn="c" vals="C"></div>
+        <div class="key iconSqr" valn="v" vals="V"></div>
+        <div class="key iconSqr" valn="b" vals="B"></div>
+        <div class="key iconSqr" valn="n" vals="N"></div>
+        <div class="key iconSqr" valn="m" vals="M"></div>
+        <div class="key iconSqr" valn="," vals="<"></div>
+        <div class="key iconSqr" valn="." vals=">"></div>
+        <div class="key iconSqr" valn="/" vals="?"></div>
+        <div class="key iconSqr" valn="Shift" vals=""></div>
+    </div>
+    <div class="linea-keyboard">
+        <div class="key iconSqr" valn="Ctrl" vals=""></div>
+        <div class="key iconSqr" valn="funtion" vals=""></div>
+        <div class="key iconSqr" valn="Alt" vals=""></div>
+        <div class="key iconSqr" valn="[ Barra Espaciadora ]" vals="" style="width: 15em"></div>
+
+        <div class="key iconSqr" valn="Cancelar" vals="" style="width: 8em"></div>
+        <div class="key iconSqr" valn="Limpiar" vals="" style="width: 4em"></div>
+    </div>
+    <script>
+        $(".key").html("<div class='up'></div><div class='down'></div>");
+        $("#OsShowComp .ScrKeyboard,#OsShowComp .closeBt").css("display", "block");
+        $(".ScrKeyboard").each(function(n, e) {
+            var shiftFlag = false;
+            $(e).attr("id", "ScrKeyboard" + n);
+            $(e).find(".key.iconSqr").draggable({revert: true, revertDuration: 100});
+            $(e).find(".closeBt").click(function(e) {
+                $("#OsShowComp").html("");
+            });
+            $(e).find(".key.iconSqr").droppable({
+                drop: function(event, ui) {
+                    var keyVal = ui.draggable.attr("valN");
+                    var keyValS = ui.draggable.attr("valS");
+                    var keyValShift = $(this).attr("valS");
+                    if (keyVal == "Shift") {
+                        shiftFlag = true;
+                        $(this.parentElement.parentElement).find(".OutputKeyboar").each(function(e) {
+                            this.value = this.value + keyValShift
+                        });
+                    } else if ($(this).attr("valN") == "Shift") {
+                        shiftFlag = true;
+                        $(this.parentElement.parentElement).find(".OutputKeyboar").each(function(e) {
+                            this.value = this.value + keyValS
+                        });
+                    }
+                    event.stopPropagation();
+                }
+            });
+            $(e).droppable({
+                drop: function(event, ui) {
+                    //alert( "dropped "+ui.draggable.html() );
+                    if (ui.draggable.hasClass("key")) {
+                        var keyVal = ui.draggable.attr("valN");
+                        switch (keyVal) {
+                            case "Bsk":
+                                $(this).find(".OutputKeyboar").each(function(e) {
+                                    this.value = this.value.substr(0, this.value.length - 1)
+                                });
+                                break;
+                            case "[ Barra Espaciadora ]":
+                                $(this).find(".OutputKeyboar").each(function(e) {
+                                    this.value = this.value + " "
+                                });
+                                break;
+                            case "Limpiar":
+                                $(this).find(".OutputKeyboar").each(function(e) {
+                                    this.value = ""
+                                });
+                                break;
+                            case "Shift":
+                                //$(this.parentElement).find(".OutputKeyboar").each(function(e){});
+                                break;
+                            case "Ok / Enter":
+                                $(targetKeyBoard).html($(this).find(".OutputKeyboar").val());
+                                $("#OsShowComp").html("");
+                                break;
+                            default:
+                                $(this).find(".OutputKeyboar").focus();
+                                if (shiftFlag == false) {
+                                    $(this).find(".OutputKeyboar").each(function(e) {
+                                        this.value = this.value + keyVal
+                                    });
+                                }
+                                else {
+                                    shiftFlag = false;
+                                }
+                                break;
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</div>

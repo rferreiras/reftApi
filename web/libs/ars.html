@@ -1,0 +1,70 @@
+<i class="icon-home icono"></i>
+<h4>Opciones/ARS </h4>
+<div class="wizard" id="arsWizard">
+    <div class="wizardPage active">
+        <h1>Funciones</h1>
+        <div class="button goNext">next</div>
+    </div>
+    <div class="wizardPage">
+        <h1>Busqueda</h1>
+        <div class="button goBack">back</div>
+        <div class="button goNext">next</div>
+    </div>
+    <div class="wizardPage">
+        <h1>Funciones</h1>
+        <div class="button goBack">back</div>
+        <div class="button goNext">finish</div>
+    </div>
+</div>
+<separador></separador>
+<style>
+    .wizard {
+        position: relative;
+        height: 50mm;
+    }
+    .wizard .wizardPage {
+        position: absolute;
+        right: 0%;
+        left: 100%;
+        top: 0;
+        bottom: 0;
+        transition: all 1s;
+        opacity: 0;
+ overflow: hidden;
+        min-width: 100%;
+    }
+    .wizard .wizardPage.active {
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        opacity: 1;
+
+    }
+</style>
+<script>
+    var cursor = 0;
+    var target = "arsWizard";
+    console.log(cursor,target);
+    $("#" + target + " .goNext").click(function () {
+        console.log(2,cursor,target);
+        if ((cursor+1) < $("#" + target + " .wizardPage").length) {
+            console.log(3,cursor,target);
+            cursor++;
+            $("#" + target + " .wizardPage").removeClass("active");
+            $($("#" + target + " .wizardPage")[cursor]).addClass("active");
+            console.log(4,cursor,target);
+        }
+    });
+    $("#" + target + " .goBack").click(function () {
+        console.log(2,cursor,target);
+        if ((cursor) > 0) {
+            console.log(3,cursor,target);
+            cursor--;
+            $("#" + target + " .wizardPage").removeClass("active");
+            $($("#" + target + " .wizardPage")[cursor]).addClass("active");
+            console.log(4,cursor,target);
+        }
+    });
+</script>

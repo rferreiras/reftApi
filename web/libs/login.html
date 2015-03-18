@@ -1,0 +1,100 @@
+<div class="loginBox" id="loginComp" ng-controller="login">
+  <div class="InputPanel" style="float: left;">
+    <div><i class="icon-user"></i>Login</div>
+    <label for="UsuarioTxt">Usuario</label>
+    <input type="text" class="UsuarioTxt" ng-model='$parent.$parent.$parent.$parent.email' />
+    <label for="ClaveTxt">Clave</label>
+    <input type="password" class="ClaveTxt" ng-model="$parent.$parent.$parent.$parent.password" />
+    <div class="button BtLogin" ng-click="loginClick()">Login</div>
+    <div class="button BtRegistro">Registrar Nueva Cuenta</div>
+  </div>
+  <div class="OutputPanel " style="float: right;">
+    <div >{{$parent.$parent.$parent.$parent.email}}</div>
+    <div class=" icon-down-open-b"></div>
+  </div>
+  <div class="Opciones">
+    <ul>
+      <li class="loginLogoutBt" ng-click="logOutClick()"><i class="icon-logout"></i>Log out
+      </li>
+      <li class="loginPreferenciasBt"><i class="icon-config"></i>Preferencias
+      </li>
+      <li class="loginVerPerfilBt"><i class="icon-user"></i>Ver Perfil
+      </li>
+      <li>-----------------------------------
+      </li>
+      <li class="loginCerrarOpcionesBt"><i class="icon-cancel"></i>Cerrar
+      </li>
+    </ul>
+  </div>
+  <div class="RegistroUsuarios">
+    <script>
+      lib.Os.Modulo("registro", ".RegistroUsuarios");
+    </script>
+  </div>
+
+  <script>
+
+    $(".loginLogoutBt,.loginVerPerfilBt,.loginPreferenciasBt,.loginCerrarOpcionesBt").click(function(e) {
+      $(".loginBox .Opciones").toggle();
+    });
+
+    $(".loginBox .OutputPanel,.loginBox .RegistroUsuarios").hide();
+    $(".loginLogoutBt").click(function(e) {
+      //$(".loginBox .Opciones").toggle();
+      window.location.href="#/";
+      $("#nav,.tvPanel").addClass("oculto");
+      lib.Os.MaskSesion = "";
+      lib.Os.dataUser = "";
+      $(".UserEmail,#OsShowCont,#OsShowComp").html("");
+      $(".loginBox .OutputPanel,.loginBox .RegistroUsuarios").hide();
+      $(".loginBox").removeClass("loged");
+      $(".loginBox .InputPanel").fadeIn();
+    });
+    $(".loginBox .Opciones").hide();
+    $(".loginBox .OutputPanel").click(function(e) {
+      $(".loginBox .Opciones").toggle();
+    });
+    //Boton de login
+    //$(".loginBox .BtLogin").click(function(e) {
+//      //alert($(".loginBox .UsuarioTxt").val());
+//      //Genera Mascarilla
+//      lib.Os.MaskSesion = lib.Os.Mascarilla();
+//      var msk = lib.Os.Encript(lib.Os.MaskSesion + ":" + $(".loginBox .ClaveTxt").val() + ":" + lib.Os.Mascarilla(), $(".loginBox .ClaveTxt").val());
+//      $.ajax({
+//        url: lib.Os.Host + "login/" + $(".loginBox .UsuarioTxt").val() + "/" + msk + "?" + Math.random() + "?roman:-azs543",
+//        dataType: "text",
+//      }).done(function(data) {
+//        //alert(data);
+//        var resultado = eval("(" + data + ")");
+//        if (resultado.Login != null) {
+//          //Login Correcto
+//          lib.Os.dataUser = eval("(" + lib.Os.Decript(resultado.User, lib.Os.MaskSesion) + ")");
+//          lib.Os.MaskSesion = lib.Os.Decript(resultado.Login, lib.Os.MaskSesion);
+//          $(".loginBox .InputPanel").fadeOut({
+//            "complete": function(e) {
+//              $(".loginBox").addClass("loged");
+//              $(".loginBox .OutputPanel").fadeIn({"complete": function(ee) {
+//                  $("#OsShowCont").html($(".HomePage").html());
+//                  UpdateUserData();
+//                  try {
+//                    lib.Os.PostLogin();
+//                  }
+//                  catch (e) {
+//                  }
+//                }});
+//            }
+//          });
+//          //$(".loginBox .UserEmail").html(lib.Os.dataUser.email);
+//          //Carga pagina de inicio
+//
+//
+//        } else if (resultado.error != null) {
+//          //usuario no encontrado o clave erronea
+//          alert(resultado.error.msg);
+//        }
+//      }).fail(function() {
+//        alert("App Abotrada");
+//      });
+//    });
+  </script>
+</div>

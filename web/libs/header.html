@@ -1,0 +1,21 @@
+<style>
+  #LogLogo{
+    float: left;
+    position: relative;
+    color: #fff;
+    font-family: wf_segoe-ui_normal;
+    font-size: 8mm;
+    cursor: pointer;
+  }
+</style>
+<div id="LogLogo" ng-click="clickLogo();">
+  <i class="icon-menu"></i> Medinet
+</div>
+<!--
+<div  ng-include="'libs/login.html'" style="float: right;"></div>
+-->
+<div style="margin-right: 2mm;float: right;margin-top: 2mm;"  ng-show="logeado" >
+  <div style="float: left;margin-left: 4mm;line-height: 6mm;">Mensajes </div><div class="UserMensajes"></div>
+  <div style="float: left;margin-left: 4mm;line-height: 6mm;">Alertas </div><div class="UserAlertas"></div>
+
+</div>

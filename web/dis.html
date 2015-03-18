@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Medinet</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/dbiconos.css" rel="stylesheet" type="text/css" />
+    <link href="css/os.css" rel="stylesheet" type="text/css" />
+    <link href="css/fontello.css" rel="stylesheet" type="text/css" />
+    <!-- *********************************** -->
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="js/vendor/jquery-2.1.0.min.js"></script>
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="js/angular-route.min.js" type="text/javascript"></script>
+    <script src="js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+  </head>
+
+  <body ng-app="app" ng-controller="main">
+    <nav>
+      <div class="topIcons">
+        <div ng-click="goHome()"><i class="icon-home"></i> </div>
+        <div ng-click="expUnExp()"><i class="icon-search"></i> </div>
+      </div>
+      <div class="bottomIcons"></div>
+    </nav>
+    <div class="warp">
+      <div id="SearchPanel">
+        <input type="search" name="libro" value="1">
+        <div>
+          <input type="radio" name="libro" value="1">LIBROS
+          <input type="radio" name="libro" value="2">revistas
+          <input type="radio" name="libro" value="3">Revistas
+        </div> 
+      </div>
+      <div id="ContetPanel"ng-view>
+
+      </div>
+    </div>
+    <script>
+          $(document).foundation();
+    </script>
+  </body>
+
+</html>

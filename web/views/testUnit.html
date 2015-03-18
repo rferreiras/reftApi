@@ -1,0 +1,72 @@
+<style>
+    div {
+        float: left;
+        /* width: 100mm; */
+        border: 1px solid #ddd;
+        padding: 2mm;
+        margin: 1mm;
+    }
+</style>
+<div>
+    <h1>Insert SingleData</h1>
+    <form action="/api/singledata" method="post">
+        Data :
+        <input name="data" />
+        <br/>Padres :
+        <input name="padres" />
+        <br/>Campos :
+        <input name="campos" />
+        <br/>Tags :
+        <input name="tags" />
+        <br/>
+        <input type="submit" value="Ok" />
+    </form>
+</div>
+<div>
+    <script>
+        function updateSD() {
+            //action="/api/singledata"
+            $.ajax({
+                url: "/api/singledata/" + $("#idSD").val(),
+                type: "POST",
+                dataType: "text",
+                data: $("#updateDSForm").serialize()
+            }).done(function (data) {
+                alert(data);
+            });
+        }
+    </script>
+    <h1>update SingleData</h1>
+    ID :
+    <input id="idSD" />
+    <form method="post" id="updateDSForm">
+        Data :
+        <input name="data" />
+        <br/>Padres :
+        <input name="padres" />
+        <br/>Campos :
+        <input name="campos" />
+        <br/>Tags :
+        <input name="tags" />
+        <br/>
+        <input type="button" value="Ok" onclick="updateSD();" />
+    </form>
+</div>
+<div>
+    <script>
+        function deleteSD() {
+            //action="/api/singledata"
+            $.ajax({
+                url: "/api/singledata/" + $("#idSDDel").val(),
+                type: "DELETE"
+            }).done(function (data) {
+                alert(data);
+            });
+        }
+    </script>
+    <h1>Delete SingleData</h1>
+    ID :
+    <input id="idSDDel" />
+    <input type="button" value="Ok" onclick="deleteSD();" />
+
+</div>

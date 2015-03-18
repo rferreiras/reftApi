@@ -1,0 +1,102 @@
+{
+	Os: {
+		TraceTarget: "#header",
+		Start:function(){
+			TraceTarget="#header";
+		}, 
+		devMode: true,
+
+		trace:function(o){
+			var t=$(TraceTarget).html();
+			$(TraceTarget).html(t+"<div>"+o.toString()+"<div>")
+		},
+		rndStr: function (n, ri, rf) {
+			if (ri == null) ri = " ".charCodeAt(0);
+			if (rf == null) rf = "~".charCodeAt(0);
+			var r = "";
+			var rd = rf - ri;
+			for (var i = 0; i < n; i++) {
+				var j = Math.ceil(Math.random() * rd);
+				r += String.fromCharCode(ri + j);
+			}
+			return escape(r);
+		}, factoriza: function (n) {
+			var r = new Array();
+			var i = 3;
+			r.push(1);
+			var h = Math.round(Math.sqrt(n)) + 1;
+			var j = 0;
+			for (; i < h; i += 2) {
+				if (n % i == 0) {
+					r.push(i);
+					i = i * r[r.length - 2];
+					//trace(i);
+				}
+				j++;
+			}
+			//trace(h, j);
+			return r;
+			//r: 1,3,17,37,51,111,629,773,1887,2319,13141,28601,39423,85803,486217
+		}, Mascarilla: function (n) {
+			if (!n) {
+				n = Math.floor(34 + Math.random() * 30);
+			}
+			var rango_inicio = "A".charCodeAt(0);
+			var rango_final = "z".charCodeAt(0);
+			var r = "";
+
+			for (var i = 0; i < n; i++) {
+				var Ran = rango_inicio + Math.floor(Math.random() * (rango_final - rango_inicio));
+				r += String.fromCharCode(Ran);
+			}
+			return r;
+		}, Decript: function (msj, clave) {
+			var cursor = 0;
+			var cursor2 = 0;
+			var r = "";
+			var r2 = "";
+			var msjLen = msj.length;
+			var claveLen = clave.length;
+			var pattern = /[A-Z]/g;
+			var pattern2 = /\s\s+/g;
+			r2 = msj.replace(pattern, " ");
+			r2 = r2.replace(pattern2, " ");
+			//trace(r2);
+			var Vals = r2.split(" ");
+			for (var i = 0; i < Vals.length - 1; i++) {
+				var vc = clave.charCodeAt(cursor2);
+
+				var v = uint("0x" + String(Vals[i]).toUpperCase());
+				v = (v - vc) / vc / 829;
+				r += String.fromCharCode(v);
+
+				cursor2 = (cursor2 + 1) % claveLen;
+			}
+			//trace(r);
+			return r;
+		}, Encript: function (msj, clave) {
+			var cursor = 0;
+			var cursor2 = 0;
+			var r = "";
+			var msjLen = String(msj).length;
+			var claveLen = String(clave).length;
+			while (cursor < msjLen) {
+				var vm = msj.charCodeAt(cursor);
+				var vc = clave.charCodeAt(cursor2);
+				//por adicion
+				var vr = (vm * vc * 809) + vc;
+				var Ran = "A".charCodeAt(0) + Math.floor(Math.random() * 20);
+				var Ran2 = "A".charCodeAt(0) + Math.floor(Math.random() * 20);
+				r += vr.toString(36) + String.fromCharCode(Ran) + String.fromCharCode(Ran2);
+
+				//Avancer
+
+				cursor++;
+				cursor2 = cursor % claveLen;
+				//trace((vm * vc*809 )+vc,vm , vc,int.MAX_VALUE);
+			}
+			//trace("resultado :",r.length, r);
+			return encodeURI(r);
+		}
+	}
+}

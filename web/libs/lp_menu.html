@@ -1,0 +1,34 @@
+<style>
+	#PacientesGrid{
+		position:relative;
+		width: 80mm;
+		height: 60mm;
+	}
+</style>
+<div class="busquedaLP">
+	<div>Buscar :</div>
+	<div><div class="icon-search"></div><div><input type="search" style="width: 60mm;" /></div></div>
+</div>
+<div id="PacientesGrid" class="dataGrid" style="z-index: 9">
+	<div class="dGHeader row">
+	</div>
+	<div class="dGCuerpo">
+	</div>
+</div>
+
+<script>
+	var DGData = {
+		headers: ["Nombre", "Apellido", "Edad", "NSS"],
+		colW: [7, 6, 3, 4],
+		data: [
+			{nombre: "Roman Ernesto", apellido: "Ferreiras Tejada", edad: "39", nss: "4587"},
+			{nombre: "Roman", apellido: "Ferreiras", edad: "39", nss: "344"},
+			{nombre: "Roman", apellido: "Ferreiras", edad: "55", nss: "42345"},
+			{nombre: "Roman", apellido: "Ferreiras", edad: "39", nss: "458799"},
+			{nombre: "Roman", apellido: "Ferreiras", edad: "22", nss: "4242"},
+			{nombre: "Roman", apellido: "Ferreiras", edad: "39", nss: "424325"},
+			{nombre: "Roman", apellido: "Ferreiras", edad: "33", nss: "799"}
+		]};
+	DataGrid.Create(DGData, "#PacientesGrid");
+
+</script>
