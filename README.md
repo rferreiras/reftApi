@@ -8,3 +8,5 @@ this principle works for all fields in the table that a fill this rule [tableNam
 also this api it's and excelent example of a simple web server without using express 
 This proyect is still on pre-alpha state, i'm moving all code from the lab to a real proyect , documentation and examples will be abalible soon 
 Mongo suport it's not ready yet.
+1 - to star the proyect node app.js 
+2 - go to localhost:8888
