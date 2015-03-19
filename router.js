@@ -15,10 +15,10 @@ function route(handle, pathname, response) {
 		"woff": "application/font-woff"
 	};
 	//console.log("About to route a request for " + pathname);
-	var punto = pathname.lastIndexOf(".");
+	var dot = pathname.lastIndexOf(".");
 	var extencion = "";
-	if (punto > -1) {
-		extencion = pathname.substr(-(pathname.length - punto) + 1, (pathname.length - punto));
+	if (dot > -1) {
+		extencion = pathname.substr(-(pathname.length - dot) + 1, (pathname.length - dot));
 		//console.log(extencion, validExtensions[extencion]);
 		if (validExtensions[extencion] == undefined) {
 			extencion = "";
