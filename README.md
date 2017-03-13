@@ -10,3 +10,4 @@ This proyect is still on pre-alpha state, i'm moving all code from the lab to a 
 Mongo suport it's not ready yet.
 1 - to star the proyect node app.js 
 2 - go to localhost:8888
+I will update this proyect in june 2017 , no mongo support by now ,i have no time
