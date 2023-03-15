@@ -56,7 +56,7 @@ function Router() {
 var App = new Vue({
 	el: "#app",
 	data: {
-		Title:"Esta es un titulo de prueva",
+		Title:"Este es un titulo de prueva",
 		contrAct: {
 			name: "",
 		},
