@@ -1,0 +1,15 @@
+<!-- Reft - roman ernesto ferreiras tejada -->
+<app id="app">
+	<div id="titulo"
+		 class=" no-print"><i class="icon-home"></i> {{Title}}</div>
+	<ul id="navMenu"
+		class=" no-print">
+		<li :class="{activa:controladores.home.isActive}" ><a href="#home">Inicio</a></li>
+
+	</ul>
+	<div class="cuerpo no-print" v-if="controladores.home.isActive">
+		<h1>Hola</h1>
+		<p>Mundo ¿que tal?</p>
+	</div>
+</app>
+<script src="js/app.js"></script>

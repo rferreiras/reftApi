@@ -1,0 +1,130 @@
+#entradaCitas {
+	display: inline-block;
+	width: 68mm;
+	min-width: 50mm;
+	padding: 2mm;
+	margin: 1mm;
+	position: relative;
+	box-shadow: 1px 1px 3px #00000070;
+	background: radial-gradient(farthest-side ellipse at 10% 0, #4e559b42 20%, #17193b40);
+	border-radius: 2mm;
+	/* float: left; */
+}
+
+#selConsultorio {
+	display: block;
+	width: 68mm;
+	padding: 2mm;
+	margin: 1mm;
+	position: relative;
+	box-shadow: 1px 1px 3px #00000070;
+	background: radial-gradient(farthest-side ellipse at 10% 0, #4e559b42 20%, #17193b40);
+	border-radius: 2mm;
+	/* float: left; */
+}
+
+#alertaExpediente p {}
+
+#alertaExpediente {
+	/* width: 99mm; */
+	padding: 3mm;
+	background: #ffffff08;
+	display: block;
+	position: absolute;
+	top: 14mm;
+	left: 120mm;
+	/* right: 10mm; */
+	border-top: 3px #ffffff63 solid;
+	overflow-wrap: break-word;
+	box-shadow: 0px 0px 3px #000;
+}
+
+#alertaExpediente .Condiciones.Cronicas {
+	color: #e2e293;
+}
+
+#alertaExpediente .Condiciones.Previas {}
+
+#alertaExpediente .Medicamentos {
+	color: #91a448;
+}
+
+#alertaExpediente .Alergias {
+	color: #ff5a5a;
+}
+
+#alertaExpediente .Observaciones {}
+
+#alertaExpediente .Factores.Riesgo {
+	color: #e1924c;
+}
+
+#alertaExpediente .Diagnostico {}
+
+#alertaExpediente .Receta {}
+
+#alertaExpediente .Odontograma {}
+
+#selConsultorio ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 3mm;
+}
+
+#selConsultorio ul li {}
+
+#selConsultorio ul li:hover {
+	background-color: #4e4e4e;
+	color: rgb(194, 194, 194);
+}
+
+#selConsultorio ul li.activa {
+	background-color: #292929;
+	border-bottom: 3px #9d9d9d solid;
+}
+
+#calCitas {
+	display: block;
+	position: absolute;
+	top: 9mm;
+	float: right;
+	right: 1mm;
+	/* height: 100%; */
+	bottom: 0mm;
+	min-width: 110mm;
+	left: 76mm;
+	border: 1px solid #ffffff36;
+	border-radius: 1mm;
+	/* overflow: overlay; */
+}
+
+#calCitas * {
+	transition: none !important;
+}
+
+
+.timeline-item .Condiciones.Cronicas {
+	color: #e2e293 !important;
+}
+
+.timeline-item .Condiciones.Previas {}
+
+.timeline-item .Medicamentos {
+	color: #91a448 !important;
+}
+
+.timeline-item .Alergias {
+	color: #f98484 !important;
+}
+
+.timeline-item .Observaciones {}
+
+.timeline-item .Factores.Riesgo {
+	color: #e1924c !important;
+}
+
+.timeline-item .Diagnostico {}
+
+.timeline-item .Receta {}
+
+.timeline-item .Odontograma {}

@@ -1,0 +1,1063 @@
+* {
+	margin: 0;
+	/* display: block; */
+	font-family: montseratM;
+	padding: 0;
+	/* transition: all 0.2s linear; */
+}
+
+@font-face {
+	font-family: "popSb";
+	src: url(../font/Poppins-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: "popLt";
+	src: url(../font/Poppins-Light.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: "popRg";
+	src: url(../font/Poppins-Regular.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: "avantdm";
+	src: url(../font/AVGARDM.TTF) format("truetype");
+}
+
+@font-face {
+	font-family: "avantdn";
+	src: url(../font/AVGARDN.TTF) format("truetype");
+}
+
+@font-face {
+	font-family: "dancing";
+	src: url(../font/DancingScript-VariableFont_wght.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: "montseratM";
+	src: url(../font/Montserrat-Medium.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: "montseratRg";
+	src: url(../font/Montserrat-Regular.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: "pacificoRg";
+	src: url(../font/Pacifico-Regular.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: "julius";
+	src: url(../font/JuliusSansOne-Regular.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: "julius";
+	src: url(../font/JuliusSansOne-Regular.ttf) format("truetype");
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+.title-1 {
+	position: absolute;
+	bottom: 20mm;
+	margin-top: 20mm;
+	right: 2mm;
+	width: fit-content;
+	background-color: #0099ffa1;
+	padding: 1mm;
+	font-size: 10mm;
+	font-family: 'avantdm';
+	color: #fff;
+	text-shadow: 2px 2px 4px #0000007a;
+}
+
+.title-1p {
+	margin-top: 20mm;
+	width: fit-content;
+	background-color: #ff0800a1;
+	padding: 1mm;
+	font-size: 10mm;
+	font-family: 'avantdm';
+	color: #fff;
+	text-shadow: 2px 2px 4px #0000007a;
+	position: absolute;
+	top: 26mm;
+}
+
+.thome-1 {
+	top: 30mm;
+	left: 43mm;
+	bottom: unset;
+	right: unset;
+	text-align: right;
+	position: absolute;
+	background-color: #ff0800a1;
+	padding: 1mm;
+	font-size: 10mm;
+	font-family: 'avantdn';
+	color: #fff;
+	text-shadow: 2px 2px 4px #0000007a;
+	z-index: 100;
+}
+
+
+
+.thome-2 {
+	top: 50mm;
+	left: 45mm;
+	bottom: unset;
+	right: unset;
+
+	text-align: right;
+	position: absolute;
+	font-weight: 400;
+	background-color: #000000a1;
+	padding: 2mm;
+	font-size: 5mm;
+	font-family: 'avantdm';
+	color: #fff;
+	text-shadow: 2px 2px 4px #0000007a;
+}
+
+.thome-3 {
+	top: 61mm;
+	left: 45mm;
+	bottom: unset;
+	right: unset;
+
+	text-align: left;
+	max-width: 120mm;
+	position: absolute;
+	background-color: #0a8cd4b8;
+	padding-right: 3mm;
+	padding-left: 3mm;
+	font-size: 5mm;
+	/* font-weight: 800; */
+	font-family: avantdn;
+	color: #fff;
+	text-shadow: 2px 2px 4px #0000007a;
+}
+
+.thome-4 {
+	top: 68mm;
+	left: 45mm;
+	bottom: unset;
+	right: unset;
+
+	text-align: left;
+	max-width: 120mm;
+	position: absolute;
+	background-color: #0a8cd4b8;
+	padding-right: 3mm;
+	padding-left: 3mm;
+	font-size: 5mm;
+	/* font-weight: 800; */
+	font-family: avantdn;
+	color: #fff;
+	text-shadow: 2px 2px 4px #0000007a;
+}
+
+.blur {
+	/* -webkit-filter: blur(3px); */
+	-moz-filter: blur(3px);
+	-o-filter: blur(3px);
+	-ms-filter: blur(3px);
+	/* filter: blur(3px); */
+}
+
+#overlayData {
+	z-index: 99999;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.52);
+	cursor: wait;
+	display: none;
+	width: 100%;
+	border-radius: 3px;
+	height: 100%;
+}
+
+.box .overlay>.fa {
+	color: white;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+	background-color: rgba(255, 255, 255, 0.1) !important;
+	background-image: none;
+	color: rgb(0, 0, 0);
+}
+
+.itemL {
+	float: left;
+	margin: 1mm;
+}
+
+select,
+input {
+	font-size: 4mm;
+	background-color: transparent;
+	-webkit-rtl-ordering: logical;
+	cursor: auto;
+	padding: 1mm;
+	/* border-radius: 1mm; */
+	border-width: 0px;
+	border-style: inset;
+	border-color: initial;
+	border-image: initial;
+	margin-bottom: 1mm;
+	color: #5a5858;
+	margin-top: 1mm;
+	/* width: 88%; */
+	border-bottom: 1px solid #b4b4b4;
+	max-width: 80mm;
+}
+
+select:focus,
+input:focus {
+	outline-width: 0;
+	font-weight: 600;
+	border-bottom: 3px solid #ffffff;
+}
+
+input,
+textarea,
+select,
+button {
+	text-rendering: auto;
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-transform: none;
+	text-shadow: none;
+	display: block;
+	font-family: "montseratRg";
+	text-align: start;
+	position: relative;
+}
+
+input,
+textarea,
+select,
+button,
+meter,
+progress {}
+
+input[type="range"] {
+	-webkit-appearance: none;
+	width: 100%;
+	margin: 1.85px 0;
+}
+
+hr {
+	margin-top: 10mm;
+	margin-bottom: 5mm;
+}
+
+.dataList {
+	float: left;
+	position: relative;
+}
+
+input[type="range"]:focus {
+	outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 16.3px;
+	cursor: pointer;
+	box-shadow: 0px 0px 4.3px #000000, 0px 0px 0px #0d0d0d;
+	background: #c43935;
+	border-radius: 3.7px;
+	border: 0px solid #010101;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	box-shadow: 0px 0px 4.7px #000000, 0px 0px 0px #0d0d0d;
+	border: 0px solid #000000;
+	height: 20px;
+	width: 15px;
+	border-radius: 3px;
+	background: #ffffff;
+	cursor: pointer;
+	-webkit-appearance: none;
+	margin-top: -1.85px;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+	background: #d25d5a;
+}
+
+input[type="range"]::-moz-range-track {
+	width: 100%;
+	height: 16.3px;
+	cursor: pointer;
+	box-shadow: 0px 0px 4.3px #000000, 0px 0px 0px #0d0d0d;
+	background: #c43935;
+	border-radius: 3.7px;
+	border: 0px solid #010101;
+}
+
+input[type="range"]::-moz-range-thumb {
+	box-shadow: 0px 0px 4.7px #000000, 0px 0px 0px #0d0d0d;
+	border: 0px solid #000000;
+	height: 20px;
+	width: 15px;
+	border-radius: 3px;
+	background: #ffffff;
+	cursor: pointer;
+}
+
+input[type="range"]::-ms-track {
+	width: 100%;
+	height: 16.3px;
+	cursor: pointer;
+	background: transparent;
+	border-color: transparent;
+	color: transparent;
+}
+
+input[type="range"]::-ms-fill-lower {
+	background: #9c2d2a;
+	border: 0px solid #010101;
+	border-radius: 7.4px;
+	box-shadow: 0px 0px 4.3px #000000, 0px 0px 0px #0d0d0d;
+}
+
+input[type="range"]::-ms-fill-upper {
+	background: #c43935;
+	border: 0px solid #010101;
+	border-radius: 7.4px;
+	box-shadow: 0px 0px 4.3px #000000, 0px 0px 0px #0d0d0d;
+}
+
+input[type="range"]::-ms-thumb {
+	box-shadow: 0px 0px 4.7px #000000, 0px 0px 0px #0d0d0d;
+	border: 0px solid #000000;
+	height: 20px;
+	width: 15px;
+	border-radius: 3px;
+	background: #ffffff;
+	cursor: pointer;
+	height: 16.3px;
+}
+
+input[type="range"]:focus::-ms-fill-lower {
+	background: #c43935;
+}
+
+input[type="range"]:focus::-ms-fill-upper {
+	background: #d25d5a;
+}
+
+table tr.selected input,
+table tr.selected select {
+	color: #122f34 !important;
+}
+
+#app {
+	/* position: absolute; */
+	/* overflow: hidden; */
+	/* left: 0; */
+	/* right: 0mm; */
+	/* top: 0mm; */
+	/* bottom: 0mm; */
+	/* color: #eaeaea; */
+	/* font-size: 4mm; */
+	/* background-color: #4a4a4a; */
+}
+
+
+nav {
+	font-family: avantdm;
+	POSITION: fixed;
+	top: 0mm;
+	left: 0mm;
+	right: 0mm;
+	background-color: #fff;
+	color: #434343;
+	height: 26mm;
+	box-shadow: 1px 1px 4px #00000063;
+}
+
+nav ul {
+	margin-top: 10mm;
+	margin-left: 55mm;
+	float: right;
+	padding-right: 5mm;
+}
+
+nav ul li {
+	/* text-decoration: none; */
+	list-style-image: none;
+	list-style: none;
+	/* text-decoration: auto; */
+	position: relative;
+	float: left;
+	margin-left: 5mm;
+}
+
+nav ul li a {
+	color: #4f4f4f;
+	text-decoration: none;
+	/*text-shadow: 1px 1px 2px #0000007a;*/
+	font-family: avantdm;
+	font-size: 6mm;
+}
+
+header {
+	position: relative;
+	z-index: 9999;
+	height: 10mm;
+	line-height: 10mm;
+	color: #fff;
+	display: block;
+}
+
+#cuerpo {
+	position: absolute;
+	top: 0mm;
+	left: 0mm;
+	right: 0mm;
+	bottom: 0mm;
+	/* background-image: url("/images/cropped-logo.png");
+    background-color: #fff; */
+	z-index: 1;
+}
+
+#homeBt {
+	display: none;
+	position: absolute;
+	overflow: hidden;
+	width: 9mm;
+	height: 9mm;
+	line-height: 10mm;
+	background-color: #aaa5;
+	padding-top: 3mm;
+	padding-left: 2.0mm;
+
+}
+
+#homeBt:hover {
+	background-color: #aaa8;
+}
+
+#logo {
+	position: fixed;
+	top: -4mm;
+	left: 4mm;
+	width: 30mm;
+	height: 30mm;
+	padding: 5mm;
+	border-radius: 50%;
+	background-color: #fff;
+	text-align: center;
+	/*! box-shadow: 1px 1px 4px #00000063; */
+	z-index: 99;
+}
+
+#logo img {
+	width: 90%;
+	height: 90%;
+	/* padding: 3mm; */
+}
+
+#cuerpo section {
+	position: relative;
+	min-height: 100vh;
+	/* padding: 0; */
+}
+
+#Inicio .f1 {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO15.jpg");
+	background-size: cover;
+	background-position: 50% 70%;
+}
+
+#Inicio .f2 {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO33.jpg");
+	background-size: cover;
+}
+
+#Inicio .f3 {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO35.jpg");
+	background-size: cover;
+}
+
+#Inicio .f4 {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO36.jpg");
+	background-size: cover;
+}
+
+#Inicio .f5 {
+	height: 100vh;
+	width: 100vw;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO37.jpg");
+	background-size: cover;
+}
+
+#Habitaciones {
+	padding-top: 10mm;
+	min-height: 100vh;
+	display: flex;
+	/*background-image: url("/images/SANMARCO1.jpg");*/
+	background: rgb(255 255 255);
+	background: radial-gradient(rgb(220 228 108) 0%, rgb(226 232 232) 100%);
+}
+
+#Instalaciones {
+	min-height: 100vh;
+	background-image: url("/images/redux/SANMARCO8.jpg");
+	background-color: rgb(62, 184, 37);
+	background-size: cover;
+}
+
+#Servicios {
+	min-height: 100vh;
+	background-image: url("/images/redux/SANMARCO5.jpg");
+	background-color: rgb(172, 37, 184);
+	background-size: cover;
+	background-position: 20% 100%;
+}
+
+#Reservaciones {
+	min-height: 100vh;
+	background-image: url("/images/redux/SANMARCO10.jpg");
+	background-color: rgb(255, 255, 255);
+	background-size: cover;
+	padding-top: 44mm;
+}
+
+.cardb {
+	margin-top: 25mm;
+	display: flex;
+	align-content: flex-start;
+	justify-content: center;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+.card img {
+	width: 100%;
+}
+
+.card {
+	position: relative;
+	margin: 2mm;
+	padding: 2mm;
+	background-color: #fff8;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.31);
+	border-radius: 1.5mm;
+	overflow: hidden;
+	/* min-height: 30mm; */
+	/* min-width: 62mm; */
+	flex: auto;
+	z-index: 9;
+}
+
+.card.notr {
+	margin: 2mm;
+	padding: 2mm;
+	/* background-color: rgb(226, 226, 226); */
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.31);
+	border-radius: 1.5mm;
+	overflow: hidden;
+	min-height: 30mm;
+	min-width: 50mm;
+}
+
+.card h1 {
+	background-color: #fff;
+	margin: -2mm;
+	margin-bottom: 2mm;
+	padding: 2mm;
+	color: #717171;
+}
+
+#Habitaciones .card {
+	flex: auto;
+	max-width: 100mm;
+	margin-right: 10mm;
+}
+
+#Habitaciones .thome-1 {
+
+	text-align: right;
+	position: absolute;
+	top: 15mm;
+	bottom: unset;
+	left: 0mm;
+	background-color: #ff0800a1;
+	padding: 1mm;
+	padding-left: 4mm;
+	padding-right: 4mm;
+	font-size: 10mm;
+	font-family: 'avantdm';
+	color: #fff;
+	text-shadow: 2px 2px 4px #0000007a;
+}
+
+#Reservaciones .f1 {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO1.jpg");
+	background-size: cover;
+}
+
+#Reservaciones .f2 {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO8.jpg");
+	background-size: cover;
+}
+
+#Reservaciones .f3 {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO7.jpg");
+	background-size: cover;
+}
+
+#Reservaciones .f4 {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO10.jpg");
+	background-size: cover;
+}
+
+#Reservaciones .f5 {
+	height: 100vh;
+	width: 100vw;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO11.jpg");
+	background-size: cover;
+}
+
+#Reservaciones .f6 {
+	height: 100vh;
+	width: 100vw;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO19.jpg");
+	background-size: cover;
+}
+
+#Reservaciones .f7 {
+	height: 100vh;
+	width: 100vw;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO20.jpg");
+	background-size: cover;
+}
+
+#Reservaciones .f8 {
+	height: 100vh;
+	width: 100vw;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO21.jpg");
+	background-size: cover;
+}
+
+#Instalaciones .f1 {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO4.jpg");
+	background-size: cover;
+	background-position: 50% 95%;
+}
+
+#Instalaciones .f2 {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO6.jpg");
+	background-size: cover;
+	background-position: 50% 40%;
+}
+
+#Instalaciones .f3 {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO14.jpg");
+	background-size: cover;
+}
+
+#Instalaciones .f4 {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO18.jpg");
+	background-size: cover;
+}
+
+#Instalaciones .f5 {
+	height: 100vh;
+	width: 100vw;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO23.jpg");
+	background-size: cover;
+	background-position: 50% 70%;
+}
+
+#Instalaciones .f6 {
+	height: 100vh;
+	width: 100vw;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO37.jpg");
+	background-size: cover;
+}
+
+#Instalaciones .f7 {
+	height: 100vh;
+	width: 100vw;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO20.jpg");
+	background-size: cover;
+}
+
+#Instalaciones .f8 {
+	height: 100vh;
+	width: 100vw;
+	background-color: rgb(37, 52, 184);
+	background-image: url("/images/redux/SANMARCO21.jpg");
+	background-size: cover;
+}
+
+#map {
+	height: 480;
+	/* The height is 400 pixels */
+	width: 100%;
+	/* The width is the width of the web page */
+}
+
+#mapa {}
+
+.social-box {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	/* width: 100%; */
+	position: relative;
+	text-align: left;
+	/* margin: 50px 0px 98px; */
+	padding: 30px 50px;
+}
+
+.social-box .info-item {
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+
+.social-box .info-icon:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #3b3a3a;
+	opacity: 0.35;
+	z-index: -1;
+}
+
+.social-box .info-item:hover>.info-icon:before {
+	opacity: 1;
+}
+
+.social-box .info-item .info-content {
+	padding-left: 8px;
+}
+
+.info-item {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+}
+
+.info-item .info-icon {
+	width: 55px;
+	height: 35px;
+	padding: 2mm;
+	/* line-height: 55px; */
+	position: relative;
+	z-index: 0;
+	text-align: center;
+	-webkit-flex-shrink: 0;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	font-size: 26px;
+}
+
+.info-item .info-icon i {
+	display: inline-block;
+}
+
+.info-item .info-content {
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+}
+
+.info-item .info-content .info-title {
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1.18;
+	margin-bottom: 2px;
+}
+
+.info-item .info-content .info-sub-title {
+	font-size: 14px;
+	word-break: break-word;
+}
+
+
+footer {
+	padding: 2mm;
+	color: #e9d7d7;
+	height: 50mm;
+	/* width: 100vh; */
+	background-color: #313131;
+	/* display: flex; */
+}
+
+.roomcal {
+	height: 120mm;
+}
+
+#reservaciones .card div .card {}
+.closeBt{
+	position: absolute;
+	top: 5mm;
+	right: 5mm;
+	width: 7mm;
+	height: 7mm;
+	line-height: 7mm;
+	border-radius: 50%;
+	background-color: #ff5722;
+	color: #fff;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.31);
+}
+[class^="btn-"],
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.bt-primary,
+.bt-secondary {
+	overflow: hidden;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 0 40px;
+	line-height: 44px;
+	letter-spacing: .5px;
+	text-transform: capitalize;
+	border-radius: 5px;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+	white-space: nowrap;
+	position: relative;
+	z-index: 0;
+}
+
+.bt-secondary {
+	color: #333333;
+	background-color: #fd8b05;
+	box-shadow: 1px 1px 4px #676767;
+}
+
+.bt-secondary:hover,
+.bt-secondary:focus {
+	color: #ffffff;
+	background-color: #222222;
+}
+#form-reserv{
+	position: fixed;
+	top: 38mm;
+	left: 5mm;
+	bottom: 5mm;
+	right: 5mm;
+	border-radius: 2mm;
+	background-color: #ffffff;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.31);
+	padding: 5mm;
+	z-index: 999;
+}
+#form-reserv input{
+	width: 100%;
+}
+.bt-primary,
+.bt-secondary,
+.bt-effect-2:after,
+.bt-primary.bt-effect-2:hover:after {
+	-webkit-transition: all .5s cubic-bezier(.645, .045, .355, 1);
+	transition: all .5s cubic-bezier(.645, .045, .355, 1);
+}
+#btenviaReservacion{
+	cursor: pointer;
+	user-select: none;
+	position: absolute;
+	right: 5mm;
+	bottom: 5mm;
+	left: unset;
+	top: unset;
+}
+#btenviaReservacion:hover{
+	bottom: 4mm;
+
+}
+.menu-idioma {
+	padding-left: 2mm;
+	color: #fff;
+	background-color: rgb(233 134 12);
+	padding-right: 3mm;
+	border-radius: 2mm;
+	margin-top: 1mm;
+	float: right;
+}
+
+#Instalaciones .thome-1 {
+	bottom: 25mm;
+	top: unset;
+	background-color: #0a8cd4b8;
+}
+
+#Instalaciones .thome-2 {
+	bottom: 15mm;
+	top: unset;
+}
+
+#Reservaciones .card label.card {
+	/* max-width: 30mm; */
+	/* height: 135mm; */
+}
+.info{
+	margin: 10mm;
+	background-color: #6502b7;
+	padding: 6mm;
+	border-radius: 5mm;
+	color: #fff;
+	text-align: center;
+}
+.skew {
+	transform: skewX(45deg);
+}
+
+.bt {
+	background-color: #dbdbdbb3;
+	margin-left: 3mm;
+	margin-bottom: 2mm;
+	display: block;
+	width: fit-content;
+	height: 6mm;
+	padding: 1mm;
+	border-radius: 1mm;
+	box-shadow: 1px 1px 2px rgb(0 0 0 / 31%);
+	position: relative;
+	cursor: pointer;
+	float: left;
+}
+.bt.sel{
+	border-bottom: 5px solid #004eff;
+}
+.bt .skew {
+	width: 5mm;
+	height: 5mm;
+	float: left;
+	margin-right: 3mm;
+	margin-left: 3mm;
+}
+
+.verde {
+	background-color: rgb(22, 163, 4);
+}
+.red {
+	background-color: red;
+}
+
+.blue {
+	background-color: rgb(0, 140, 255);
+}
+
+@media (max-width: 685px) {
+	.thome-1 {
+		top: 40mm;
+		left: 0mm;
+		bottom: unset;
+		right: unset;
+	}
+
+	.thome-2 {
+		top: 65mm;
+		left: 0mm;
+		bottom: unset;
+		right: unset;
+	}
+
+	.thome-3 {
+		top: 75mm;
+		left: 0mm;
+		bottom: unset;
+		right: unset;
+	}
+
+	.thome-4 {
+		top: 0mm;
+		left: 0mm;
+		bottom: unset;
+		right: unset;
+	}
+}
+
+@media (max-width: 880px) {
+
+	nav .menu-item {
+		display: none;
+	}
+
+	#homeBt {
+		display: block;
+	}
+}

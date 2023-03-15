@@ -1,0 +1,150 @@
+@media screen and (max-width: 250mm) {
+	footer {
+		left: 18mm;
+		display: none;
+	}
+	#alertaExpediente {
+		position: relative !important;
+		left: 0mm !important;
+	}
+	#navMenu {
+		bottom: 0mm;width: 12mm;
+	}
+
+	.cuerpo {
+		left: 12mm;
+	}
+
+	.menuTxt {
+		display: none;
+	}
+
+	#loginDiv {
+		left: 12mm;
+	}
+	#geoloc{
+		top: 171mm;
+		left: 149mm;
+	}
+	.foto-mid {
+		width: 25mm;
+		border-radius: 2mm;
+		height: 25mm;
+		object-fit: cover;
+		float: left;
+		background-color: #2676ab;
+		margin: 1mm;
+		float: left;
+	}
+
+	.detalleFoto {
+		left: 56%;
+		right: 1mm;
+		top: 1mm;
+	}
+
+	.expandido .detalleFoto {
+		left: 42mm;
+		right: 8mm;
+		top: 1mm;
+	}
+
+	#fmid {
+		border-radius: 2mm;
+		object-fit: cover;
+		height: 39mm;
+		width: 40mm;
+	}
+
+	.expandido #fmid {
+		object-fit: contain;
+		width: 40mm;
+		/* display: none; */
+	}
+
+	.superexpandido #fmid {
+		object-fit: contain;
+		height: 110mm;
+		width: 100%;
+		height: 59%;
+	}
+}
+
+@media screen and (max-width: 175mm) {
+	#navMenu {
+		width: 100% !important;
+		top: unset;
+		/* background-color: black; */
+		background: radial-gradient(ellipse at 8% 0, hsl(221deg 33% 32%) 13%, hsl(225deg 44% 23%));
+	}
+
+	.cuerpo {
+		left: 0mm !important;
+		bottom: 15mm;
+	}
+
+	.menuTxt {
+		display: none;
+	}
+
+	#navMenu li {
+		width: 13mm;
+		height: 14mm;
+	float: left;}
+
+	.icono {
+		width: 13mm;
+		height: 14mm;
+		line-height: 15mm;
+	}
+
+	#loginDiv {
+		left: 1mm;
+	}
+
+	.foto-mid {
+		width: 25mm;
+		border-radius: 2mm;
+		height: 25mm;
+		object-fit: cover;
+		float: left;
+		background-color: #2676ab;
+		margin: 1mm;
+		float: left;
+	}
+
+	.detalleFoto {
+
+		left: 56%;
+		right: 1mm;
+		top: 1mm;
+	}
+
+	.expandido .detalleFoto {
+
+		position: relative;
+		left: unset;
+		right: unset;
+		top: unset;
+	}
+
+	#fmid {
+		object-fit: cover;
+		background-color: #2b2b2b;
+		height: 40mm;
+		width: 40mm;
+	}
+
+	.expandido #fmid {
+		object-fit: contain;
+		height: 110mm;
+		width: 100%;
+	}
+
+	.superexpandido #fmid {
+		object-fit: contain;
+		height: 110mm;
+		width: 100%;
+		height: 59%;
+	}
+}
