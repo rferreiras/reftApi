@@ -13,6 +13,15 @@ Controladores = {
 			primeravez = false;
 		},
 	},
+	Dolores: {
+		name: "Dolores",
+		isActive: false,
+		funct: function (id) {
+			this.isActive = true;
+			console.log("Controlador Dolores " + id);
+			primeravez = false;
+		},
+	},
 
 };
 
@@ -47,7 +56,7 @@ function Router() {
 var App = new Vue({
 	el: "#app",
 	data: {
-		Title:"",
+		Title:"Esta es un titulo de prueva",
 		contrAct: {
 			name: "",
 		},
